@@ -28,7 +28,6 @@ router
         }
     })
 })
-
 .get('/delOrders', (req, res)=>{
     let sql = 'SELECT * FROM orders';
     con.query(sql, (err, result)=>{
