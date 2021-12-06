@@ -75,12 +75,10 @@ app
                      `)`; 
                 con.query(sql, (err,result) => {
                     if(!err){
-                        res.send(result);
-                        return;
+                        res.redirect('thankyou.html');
                     }
                     else{
-                        res.json(req.body);
-                        return;
+                        res.status(404).send('ERROR. Please Go back and Order Again');
                     }
                 })
         })
