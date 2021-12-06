@@ -34,17 +34,17 @@
 		</ul>
 	</div>
 	<div class="justify-content-end text-white mr-4">
-		<button class="button btn-primary ml-3"><a href="login.html" class="text-white" style="text-decoration: none;">Logout</a></button>
+		<button class="button btn-primary ml-3"><a href="/system" class="text-white" style="text-decoration: none;">Logout</a></button>
 	</div>
 </nav>
 <!--Title-->
 <div class="container pb-5" style="text-align: center;"><h1 style="all: unset; font-size: 3.5rem; font-weight: bolder;">Products</h1></div>
 <div class="table-responsive" style="padding-left: 15rem; padding-right: 15rem;">
-	<div class="row justify-content-end mb-4" style="margin-right: 4rem;">
-		<div class="col- px-2">
+	<div class="row justify-content-end mb-4">
+		<div class="col- px-1">
 		<button type="button" class="btn btn-success px-4"><a href="/products/addProducts" class="text-white">Add</a></button>
 		</div>
-		<div class="col- px-2">
+		<div class="col- px-1 mr-3">
 		<button type="button" class="btn btn-danger px-3"><a href="/products/delProducts" class="text-white">Delete</a></button>
 		</div>
 	</div>
@@ -62,8 +62,6 @@
 				<th scope="row" style="text-align: center;" class="align-middle"><input type="hidden" name="prodID" style="width: 6rem;" value=<%=items.food_id %>><%=items.food_id %></th>
 				<td class="align-middle"><%= items.description %></td>
 				<td class="align-middle"><%= items.price %></td>
-				<td>
-				</td>
 			  </tr>
 		<% }) %>
 	</tbody>
@@ -80,7 +78,7 @@
 		  <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
 		  </div>
 		  <!-- Copyright -->
-		  <div class="footer-copyright text-center py-1">© 2021 LeSweet Goodies and Pastries Website by ????. All Rights Reserved</div>
+		  <div class="footer-copyright text-center py-1">© 2021 LeSweet Goodies and Pastries Website by 4lyferz. All Rights Reserved</div>
 	   </div>
 	</div>
  </footer>
