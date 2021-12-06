@@ -34,7 +34,7 @@
 		</ul>
 	</div>
 	<div class="justify-content-end text-white mr-4">
-		<button class="button btn-primary ml-3"><a href="/admin" class="text-white" style="text-decoration: none;">Logout</a></button>
+		<button class="button btn-primary ml-3"><a href="/system" class="text-white" style="text-decoration: none;">Logout</a></button>
 	</div>
 </nav>
 <!--Title-->
@@ -53,10 +53,11 @@
 		<th scope="col">Quantity</th>
 		<th scope="col">First Name</th>
 		<th scope="col">Last Name</th>
+		<th scope="col">Address</th>
 		<th scope="col">Contact No.</th>
 		<th scope="col">Email</th>
 		<th scope="col">Facebook</th>
-		<th scope="col">Delivery/ Pick Up date</th>
+		<th scope="col" style="width: 10rem;">Delivery/ Pick Up date</th>
 		<th scope="col">Delivery option</th>
 		<th scope="col">MOP</th>
 		<th scope="col">Delivery time</th>
@@ -70,6 +71,7 @@
 				<td><%= items.qty %></td>
 				<td><%= items.customer_FName %></td>
 				<td><%= items.customer_LName %></td>
+				<td><%= items.customer_address %></td>
 				<td><%= items.customer_number %></td>
 				<td><%= items.customer_email %></td>
 				<td><%= items.customer_facebook %></td>
