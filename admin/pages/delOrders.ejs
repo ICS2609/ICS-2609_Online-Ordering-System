@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
-	<link rel="icon" href="../admin-images/favicon.ico">
+	<link rel="icon" href="../admin-images/icon.png">
     <link href="../admin-css/bootstrap-4.3.1.css" rel="stylesheet">
     <link href="../admin-css/adminMain.css" rel="stylesheet" type="text/css">
     <!-- jQuery and plugins --> 
@@ -22,10 +22,10 @@
 	</button>
 	<div id="my-nav" class="collapse navbar-collapse">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link" href="/o"><h5>Manage Orders</h5></a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="/p"><h5>Manage Products</h5></a>
 			</li>
 			<li class="nav-item">
@@ -34,17 +34,52 @@
 		</ul>
 	</div>
 	<div class="justify-content-end text-white mr-4">
-		<button class="button btn-primary ml-3"><a href="/admin" class="text-white" style="text-decoration: none;">Logout</a></button>
+		<button class="button btn-primary ml-3"><a href="/system" class="text-white" style="text-decoration: none;">Logout</a></button>
 	</div>
 </nav>
 <!--Title-->
-<div class="container pb-5" style="text-align: center;"><h1 style="all: unset; font-size: 3.5rem; font-weight: bolder;">Orders</h1></div>
-<div class="table-responsive px-5">
-	<div class="row justify-content-end mb-4">
-		<div class="col- px-4">
-		<button type="button" class="btn btn-danger px-3"><a href="/orders/delOrders" class="text-white">Delete</a></button>
+<div class="container pb-5" style="text-align: center;"><h3 style="all: unset; font-size: 3rem; font-weight: bolder;">Remove an Order</h3></div>
+<form method="post" action="/orders/delOrders/del-data">
+	<div class="row justify-content-center">
+		<div class="col- py-2">
+			<label for="foodID" style="font-weight: bolder; font-size: 1.3rem;">Food Item:</label>
+			<input type="number" id="foodID" style="width: 5rem; font-weight: bolder; font-size: 1.3rem;" name="foodID">
 		</div>
 	</div>
+	<div class="row justify-content-center">
+		<div class="col- py-2">
+			<label for="oID" style="font-weight: bolder; font-size: 1.3rem;">Order ID:</label>
+			<input type="number" id="oID" style="width: 10rem; font-weight: bolder; font-size: 1.3rem;" name="oID">
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col- py-2">
+			<label for="fName" style="font-weight: bolder; font-size: 1.3rem;">First Name:</label>
+			<input type="text" id="fName" style=" font-weight: bolder; font-size: 1.3rem;" name="fName">
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col- py-2">
+			<label for="lName" style="font-weight: bolder; font-size: 1.3rem;">Last Name:</label>
+			<input type="text" id="lName" style=" font-weight: bolder; font-size: 1.3rem;" name="lName">
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col- py-2">
+			<label for="date" style="font-weight: bolder; font-size: 1.3rem;">Date:</label>
+			<input type="date" id="date" style="width: 13rem; font-weight: bolder; font-size: 1.3rem;" name="date">
+		</div>
+	</div>
+	<div class="row justify-content-center pt-3 pb-5">
+		<div class="col-">
+			<button type="submit" class="btn btn-danger">
+				&ensp;&ensp;&ensp;DELETE&ensp;&ensp;&ensp;
+			</button>
+		</div>
+	</div>
+</form>
+
+<div class="table-responsive px-5">
 <table class="table table-bordered table-hover table-striped">
 	<thead class="thead-color">
 	  <tr>
@@ -53,6 +88,7 @@
 		<th scope="col">Quantity</th>
 		<th scope="col">First Name</th>
 		<th scope="col">Last Name</th>
+        <th scope="col">Address</th>
 		<th scope="col">Contact No.</th>
 		<th scope="col">Email</th>
 		<th scope="col">Facebook</th>
@@ -70,6 +106,7 @@
 				<td><%= items.qty %></td>
 				<td><%= items.customer_FName %></td>
 				<td><%= items.customer_LName %></td>
+                <td><%= items.customer_address %></td>
 				<td><%= items.customer_number %></td>
 				<td><%= items.customer_email %></td>
 				<td><%= items.customer_facebook %></td>
@@ -82,6 +119,7 @@
 	</tbody>
   </table>
 </div>
+
 
 <!--footer-->
 <footer>

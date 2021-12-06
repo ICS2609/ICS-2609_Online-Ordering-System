@@ -3,7 +3,6 @@ const mysql2 = require('mysql2');
 const morgan = require('morgan');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const server = require("./jsreport/server");
 const pRoute = require("./routes/products");
 const oRoute = require("./routes/orders");
 const aRoute = require("./routes/admins");
@@ -43,7 +42,8 @@ app
         date = req.body.date,
         delivery = req.body.delivery,
         payment = req.body.payment,
-        time = req.body.time;
+        time = req.body.time,
+        address = req.body.address;
         [order].forEach((product, index, arr)=>{
                 const q = quantity[index];
                 let sql = "INSERT INTO foodorder.orders (" +
@@ -51,6 +51,7 @@ app
                     " qty,"+ 
                     " customer_FName," + 
                     " customer_LName," +
+                    " customer_address," +
                     " customer_number," +
                     " customer_email," +
                     " customer_facebook," +
@@ -63,6 +64,7 @@ app
                      con.escape(q) + `,` +
                      con.escape(first) + `,` +
                      con.escape(last) + `,` +
+                     con.escape(address) + `,` +
                      con.escape(contact) + `,` +
                      con.escape(""+email) + `,` +
                      con.escape(fb) + `,` +
